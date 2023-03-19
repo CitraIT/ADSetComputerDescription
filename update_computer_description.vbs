@@ -25,6 +25,6 @@ Set objNetwork = CreateObject("WScript.Network")
 Set objComputer = GetObject("LDAP://" & ADSystemInfo.DomainDNSName & "/" & ADSystemInfo.ComputerName)
 
 ' Atualiza a descrição do computador no formato: Username - Computername - Datetime
-objComputer.Put "Description", objNetwork.Computername & " - " & objNetwork & " - " & Now()
+objComputer.Put "Description", objNetwork.Computername & " - " & objNetwork.UserName & " - " & Now()
 objComputer.SetInfo()
 
